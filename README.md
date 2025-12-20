@@ -1,5 +1,8 @@
 # Go-Termii
 
+Fork of original and only just extending to support certain cases. 
+Core API/library not changing
+
 [Termii](https://developers.termii.com/) client application written in Go
 
 ## Usage
@@ -7,7 +10,7 @@
 ### Install Package
 
 ```bash
-go get github.com/Uchencho/go-termii
+go get github.com/ayinke-llc/go-termii
 ```
 
 ### Documentation
@@ -22,7 +25,7 @@ Please see [the docs](https://developers.termii.com/) for the most up-to-date do
 package main
 
 import (
-    termii "github.com/Uchencho/go-termii"
+    termii "github.com/ayinke-llc/go-termii"
     "log"
 )
 

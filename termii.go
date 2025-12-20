@@ -11,6 +11,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/ayinke-llc/hermes"
 	"github.com/pkg/errors"
 )
 
@@ -39,6 +40,24 @@ func ConfigFromEnvVars() Config {
 // NewClient creates a termii client using configuration variables
 func NewClient() Client {
 	return Client{config: ConfigFromEnvVars(), client: &http.Client{Timeout: 30 * time.Second}}
+}
+
+func NewClientWithOptions(apiKey, senderID string) (Client, error) {
+	if hermes.IsStringEmpty(apiKey) {
+		return Client{}, errors.New("please provide your api key")
+	}
+
+	if hermes.IsStringEmpty(senderID) {
+		return Client{}, errors.New("please provide your sender id")
+	}
+
+	return Client{
+		config: Config{
+			APIKey:   apiKey,
+			BaseURL:  "https://api.termii.com",
+			SenderID: senderID,
+		},
+	}, nil
 }
 
 func (s *Client) makeRequest(method, rURL string, reqBody interface{}, resp interface{}) error {
