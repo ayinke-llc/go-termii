@@ -9,9 +9,9 @@ import (
 
 // GetBalanceResponse is a representation of a get balance response
 type GetBalanceResponse struct {
-	User     string `json:"user"`
-	Balance  int    `json:"balance"`
-	Currency string `json:"currency"`
+	User     string  `json:"user"`
+	Balance  float64 `json:"balance"`
+	Currency string  `json:"currency"`
 }
 
 // VerifyNumberRequest is a representation of a verify phone number request

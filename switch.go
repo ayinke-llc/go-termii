@@ -84,7 +84,6 @@ type SendMessageRequest struct {
 type SendMessageResponse struct {
 	MessageID string `json:"message_id"`
 	Message   string `json:"message"`
-	Balance   int    `json:"balance"`
 	User      string `json:"user"`
 }
 
@@ -106,11 +105,11 @@ type TemplateRequest struct {
 
 // TemplateResponse is a representation of a set template response
 type TemplateResponse struct {
-	Code      string `json:"code"`
-	MessageID string `json:"message_id"`
-	Message   string `json:"message"`
-	Balance   string `json:"balance"`
-	User      string `json:"user"`
+	Code      string  `json:"code"`
+	MessageID string  `json:"message_id"`
+	Message   string  `json:"message"`
+	Balance   float64 `json:"balance"`
+	User      string  `json:"user"`
 }
 
 // FetchSenderID allows businesses retrieve the status of all registered sender ID
