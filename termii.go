@@ -57,6 +57,9 @@ func NewClientWithOptions(apiKey, senderID string) (Client, error) {
 			BaseURL:  "https://api.termii.com",
 			SenderID: senderID,
 		},
+		client: &http.Client{
+			Timeout: time.Second * 30,
+		},
 	}, nil
 }
 
